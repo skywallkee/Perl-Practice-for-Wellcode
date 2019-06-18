@@ -1,3 +1,5 @@
+# Print the number of mouses bought and total price for the given computer mouse slots
+# Solution: http://codeforces.com/contest/762/submission/55700901
 use strict;
 use warnings;
 

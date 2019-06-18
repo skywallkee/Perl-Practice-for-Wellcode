@@ -1,3 +1,5 @@
+# Find the biggest subarray with GCD higher than 1
+# Solution: http://codeforces.com/problemset/submission/757/55701579
 my $poke_nr = <>;
 my %pokemons;
 my @numbers = split(" ", <>);

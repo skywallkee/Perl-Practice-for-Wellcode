@@ -37,10 +37,16 @@ sub correct_password
 		my @split = split(quotemeta("]["), $row);
 		@split = split(quotemeta("]"), $split[1]);
 		my $password = $split[0];
-		if($password eq $_[0])
+		@split = split(quotemeta("]["), $row);
+		@split = split(quotemeta("["), $split[0]);
+		my $username = $split[1];
+		if($username = $_[1])
 		{
-			close $fh;
-			return 1;
+			if($password eq $_[0])
+			{
+				close $fh;
+				return 1;
+			}
 		}
 	}
 	close $fh;
@@ -73,7 +79,7 @@ sub login_form
 	{
 		return "";
 	}
-	while(correct_password($password) == 0)
+	while(correct_password($password, $username) == 0)
 	{
 		print "Invalid password, please try again (-1 to cancel): ";
 		$password = <>;

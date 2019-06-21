@@ -14,7 +14,7 @@ sub existing_username
 {
 	my $db = $_[0];
 	my $user = $_[1];
-	my $query = qq{ SELECT USER FROM users };
+	my $query = qq{ SELECT USERNAME FROM users };
 	my $result = $db->query($query);
 	while(my @row = $result->list())
 	{
@@ -32,7 +32,7 @@ sub correct_password
 	my $db = $_[0];
 	my $user = $_[1];
 	my $pass = $_[2];
-	my $query = qq{SELECT USER, PASSWORD FROM users};
+	my $query = qq{SELECT USERNAME, PASSWORD FROM users};
 	my $result = $db->query($query);
 	while(my @row = $result->list())
 	{
@@ -195,7 +195,7 @@ sub add_user_database
 	my $password = $_[1];
 	chomp $password;
 	my $db = $_[2];
-	my $query = qq{INSERT INTO users (USER, PASSWORD) VALUES ('$username', '$password')};
+	my $query = qq{INSERT INTO users (USERNAME, PASSWORD) VALUES ('$username', '$password')};
 	$db->query($query);	
 }
 
@@ -288,10 +288,12 @@ sub do_choice
 
 sub initiate_server
 {
-	my $driver = "DBM";
+	my $driver = "Pg";
+	my $username = "wellcode";
+	my $password = "1234";
 	my $database = "wellcodet2";
 	my $dsn = "DBI:$driver:dbname = $database;host = 127.0.0.1;port = 5432";
-	my $db = DBIx::Simple->connect($dsn, { RaiseError => 1 })
+	my $db = DBIx::Simple->connect($dsn, $username, $password, { RaiseError => 1 })
         	or die DBIx::Simple->error;
 	print "Successfully connected to the database!\n";
 	my $query;
@@ -304,16 +306,15 @@ sub initiate_server
 	{
 		print "Creating users table.\n";
 		$query = qq{CREATE TABLE users
-			    (USER TEXT NOT NULL,
+			    (USERNAME TEXT NOT NULL,
 			    PASSWORD TEXT NOT NULL);)};
 		$db->query($query);
 		print "Successfully created users table.\n";
-		$query = qq{INSERT INTO users (USER, PASSWORD) VALUES ('admin', 'AdminPw1')};
+		$query = qq{INSERT INTO users (USERNAME, PASSWORD) VALUES ('admin', 'AdminPw1')};
 		$db->query($query);
 		print "Created admin account!\n";
 	}
 	print "Successfully connected the users table!\n";
-	my $result = $db->query(qq{SELECT USER, PASSWORD FROM users});
 	return $db;
 }
 

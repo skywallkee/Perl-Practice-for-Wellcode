@@ -1,7 +1,4 @@
-Structura baza de date:
-Database ------ Tabela users
-
-
-Tabela users:
-USER - Text
-PASSWORD - Text
+CREATE TABLE users (
+	USERNAME TEXT NOT NULL,
+	PASSWORD TEXT NOT NULL
+);

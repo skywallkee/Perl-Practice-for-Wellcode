@@ -1,5 +1,0 @@
-[admin][Adminpw1]
-[user1][UpW2asd]
-[user2][Passw0rd]
-[s0me_user][S0meP/\ssword]
-[Admin][Abcdef1]

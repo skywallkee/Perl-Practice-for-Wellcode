@@ -1,0 +1,35 @@
+% layout 'default';
+% title 'Home Page';
+
+<div class="body">
+	% if($message_success ne "") {
+	<div class="alert alert-success" role="alert">
+		<%= $message_success %>
+	</div>
+	%}
+	% if($message_user ne "") {
+	<div class="alert alert-danger" role="alert">
+		<%= $message_user %>
+	</div>
+	%}
+	% if($message_pass ne "") {
+	<div class="alert alert-danger" role="alert">
+		<%= $message_pass %>
+	</div>
+	%}
+	<h2>
+		Register
+	</h2>
+	<hr>
+	%if ($logged){
+		You already have an account.<br />
+		<a href="/"><button type="button" class="btn btn-dark">Go Back</button></a><br />
+	%}else{
+		<form method="post">
+			Username: <input type="text" name="username"><br />
+			Password: <input type="password" name="password"><br /><br />
+			<button type="submit" class="btn btn-success" name="register" value=1>Register</button>
+			<a href="/"><button type="button" class="btn btn-dark">Go Back</button></a><br />
+		</form>
+	%}
+</div>

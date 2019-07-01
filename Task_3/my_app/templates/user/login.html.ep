@@ -1,0 +1,26 @@
+% layout 'default';
+% title 'Home Page';
+
+<div class="body">
+	% if($message ne "") {
+	<div class="alert alert-danger" role="alert">
+		<%= $message %>
+	</div>
+	%}
+	<h2>
+		Log In
+	</h2>
+	<hr>
+	%if ($logged){
+		You already are logged in.<br />
+		<a href="/"><button type="button" class="btn btn-dark">Go Back</button></a><br />
+	%}else{
+		<form method="post">
+			Username: <input type="text" name="username"><br />
+			Password: <input type="password" name="password"><br /><br />
+			<button type="submit" class="btn btn-success">Log In</button>
+			<a href="/"><button type="button" class="btn btn-dark">Go Back</button></a><br />
+		</form>
+		Don't have an account? <a href="/register">Register now!</a>
+	%}
+</div>

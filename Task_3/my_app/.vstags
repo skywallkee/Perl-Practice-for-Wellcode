@@ -1,0 +1,28 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+MyApp	lib/MyApp.pm	1;"	p
+MyApp::Controller::User	lib/MyApp/Controller/User.pm	1;"	p
+MyApp::Controller::User::get_atcoder	lib/MyApp/Controller/User.pm	21;"	s
+MyApp::Controller::User::get_codeforces	lib/MyApp/Controller/User.pm	11;"	s
+MyApp::Controller::User::get_csacademy	lib/MyApp/Controller/User.pm	16;"	s
+MyApp::Controller::User::get_infoarena	lib/MyApp/Controller/User.pm	5;"	s
+MyApp::Controller::User::get_username	lib/MyApp/Controller/User.pm	31;"	s
+MyApp::Controller::User::index	lib/MyApp/Controller/User.pm	36;"	s
+MyApp::Controller::User::is_authenticated	lib/MyApp/Controller/User.pm	26;"	s
+MyApp::Controller::User::login	lib/MyApp/Controller/User.pm	60;"	s
+MyApp::Controller::User::register	lib/MyApp/Controller/User.pm	78;"	s
+MyApp::startup	lib/MyApp.pm	7;"	s
+get_atcoder	lib/MyApp/Controller/User.pm	21;"	s
+get_codeforces	lib/MyApp/Controller/User.pm	11;"	s
+get_csacademy	lib/MyApp/Controller/User.pm	16;"	s
+get_infoarena	lib/MyApp/Controller/User.pm	5;"	s
+get_username	lib/MyApp/Controller/User.pm	31;"	s
+index	lib/MyApp/Controller/User.pm	36;"	s
+is_authenticated	lib/MyApp/Controller/User.pm	26;"	s
+login	lib/MyApp/Controller/User.pm	60;"	s
+register	lib/MyApp/Controller/User.pm	78;"	s
+startup	lib/MyApp.pm	7;"	s

@@ -1,0 +1,26 @@
+% layout 'default';
+% title 'Home Page';
+
+<div class="body">
+	%if($logged){
+		<h2>
+			Profile <br />
+		</h2>
+		<hr>
+		<form method="post">
+			InfoArena: <input type="text" name="infoarena" value=<%= $infoarena %>><br />
+			CodeForces: <input type="text" name="codeforces" value=<%= $codeforces %>><br />
+			CSAcademy: <input type="text" name="csacademy" value=<%= $csacademy %>><br />
+			AtCoder: <input type="text" name="atcoder" value=<%= $atcoder %>><br /><br />
+			<button type="submit" class="btn btn-info" name="save" value="1">Save</button>
+			<button type="submit" class="btn btn-success" name="logout" value="1">Log Out</button>
+		</form>
+	%}else{
+		<h2>
+			You are not logged in <br />
+		</h2>
+		<hr>
+		<a href="/login"><button type="button" class="btn btn-success">Log In</button></a>
+		<a href="/register"><button type="button" class="btn btn-info">Register</button></a>
+	%}
+</div>
